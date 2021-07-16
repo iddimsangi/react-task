@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import './App.css';
+import Validation from './Validation/Validation';
 export default class App extends Component {
   state = {
     userInput:''
@@ -12,11 +13,12 @@ export default class App extends Component {
   render() {
     return (  
       <div className="App">
-            <header className="App-header">
+             <header className="App-header">
                 <input type="text" onChange={this.changeHandler} />
-                <p >{this.state.userInput}</p>
-            </header>
-          </div>
+                {/* <p >{this.state.userInput}</p> */}
+                <Validation inputLength={this.state.userInput.length} />
+             </header>
+      </div>
     )
   }
 }
